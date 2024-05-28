@@ -3,12 +3,12 @@ import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyCnt3alm6VdkY-rDrh_YtoxgrLyiajLPvM',
-    authDomain: 'mquix-online-clothing-store.firebaseapp.com',
-    projectId: 'mquix-online-clothing-store',
-    storageBucket: 'mquix-online-clothing-store.appspot.com',
-    messagingSenderId: '265576550516',
-    appId: '1:265576550516:web:7b3158cb0450cd3a264121',
+    apiKey: '',
+    authDomain: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+    appId: '',
 };
 
 const app = initializeApp(firebaseConfig);
