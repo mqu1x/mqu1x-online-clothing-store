@@ -1,21 +1,31 @@
 import { Fragment, useContext, useState } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
-import { Link } from 'react-router-dom';
+import Context from '../../context/data/Context';
 import { BsFillCloudSunFill } from 'react-icons/bs';
 import { FiSun } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { Dialog, Transition } from '@headlessui/react';
 import { RxCross2 } from 'react-icons/rx';
+import { useSelector } from 'react-redux';
 
-import Context from '../../context/data/Context';
+function Navbar() {
+    const context = useContext(Context);
+    const { mode, toggleMode } = context;
 
-export default function Navbar() {
     const [open, setOpen] = useState(false);
 
-    const context = useContext(Context);
-    const { toggleMode, mode } = context;
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    // console.log(user.user.email)
+
+    const logout = () => {
+        localStorage.clear('user');
+        window.location.href = '/login';
+    };
+
+    const cartItems = useSelector((state) => state.cart);
 
     return (
-        <div className='bg-white sticky top-0 z-50  '>
-            {/* Mobile menu */}
+        <div className='bg-white sticky top-0 z-50'>
             <Transition.Root show={open} as={Fragment}>
                 <Dialog as='div' className='relative z-40 lg:hidden' onClose={setOpen}>
                     <Transition.Child
@@ -65,34 +75,56 @@ export default function Navbar() {
                                     >
                                         All Products
                                     </Link>
-                                    <div className='flow-root'>
-                                        <Link
-                                            to={'/order'}
-                                            style={{ color: mode === 'dark' ? 'white' : '' }}
-                                            className='-m-2 block p-2 font-medium text-gray-900'
-                                        >
-                                            Order
-                                        </Link>
-                                    </div>
 
-                                    <div className='flow-root'>
-                                        <Link
-                                            to={'/dashboard'}
-                                            className='-m-2 block p-2 font-medium text-gray-900'
-                                            style={{ color: mode === 'dark' ? 'white' : '' }}
-                                        >
-                                            admin
-                                        </Link>
-                                    </div>
+                                    {user ? (
+                                        <div className='flow-root'>
+                                            <Link
+                                                to={'/order'}
+                                                style={{ color: mode === 'dark' ? 'white' : '' }}
+                                                className='-m-2 block p-2 font-medium text-gray-900'
+                                            >
+                                                Order
+                                            </Link>
+                                        </div>
+                                    ) : (
+                                        ''
+                                    )}
 
-                                    <div className='flow-root'>
-                                        <a
-                                            className='-m-2 block p-2 font-medium text-gray-900 cursor-pointer'
-                                            style={{ color: mode === 'dark' ? 'white' : '' }}
-                                        >
-                                            Logout
-                                        </a>
-                                    </div>
+                                    {user?.user?.email === 'knupadhyay784@gmail.com' ? (
+                                        <div className='flow-root'>
+                                            <Link
+                                                to={'/dashboard'}
+                                                className='-m-2 block p-2 font-medium text-gray-900'
+                                                style={{ color: mode === 'dark' ? 'white' : '' }}
+                                            >
+                                                admin
+                                            </Link>
+                                        </div>
+                                    ) : (
+                                        ''
+                                    )}
+
+                                    {user ? (
+                                        <div className='flow-root'>
+                                            <a
+                                                onClick={logout}
+                                                className='-m-2 block p-2 font-medium text-gray-900 cursor-pointer'
+                                                style={{ color: mode === 'dark' ? 'white' : '' }}
+                                            >
+                                                Logout
+                                            </a>
+                                        </div>
+                                    ) : (
+                                        <div className='flow-root'>
+                                            <Link
+                                                to={'/signup'}
+                                                className='-m-2 block p-2 font-medium text-gray-900 cursor-pointer'
+                                                style={{ color: mode === 'dark' ? 'white' : '' }}
+                                            >
+                                                Signup
+                                            </Link>
+                                        </div>
+                                    )}
                                     <div className='flow-root'>
                                         <Link
                                             to={'/'}
@@ -100,9 +132,9 @@ export default function Navbar() {
                                         >
                                             <img
                                                 className='inline-block w-10 h-10 rounded-full'
-                                                src='https://github.com/gaearon.png'
+                                                src='https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/854c3653036145.5925a26a38364.jpeg'
                                                 alt='Dan_Abromov'
-                                            />{' '}
+                                            />
                                         </Link>
                                     </div>
                                 </div>
@@ -129,7 +161,6 @@ export default function Navbar() {
                 </Dialog>
             </Transition.Root>
 
-            {/* desktop  */}
             <header className='relative bg-white'>
                 <p
                     className='flex h-10 items-center justify-center bg-pink-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8'
@@ -138,7 +169,7 @@ export default function Navbar() {
                         color: mode === 'dark' ? 'white' : '',
                     }}
                 >
-                    Get free delivery on orders over ₹300
+                    Get free delivery on orders over ₽300
                 </p>
 
                 <nav
@@ -200,27 +231,47 @@ export default function Navbar() {
                                     >
                                         All Products
                                     </Link>
-                                    <Link
-                                        to={'/order'}
-                                        className='text-sm font-medium text-gray-700 '
-                                        style={{ color: mode === 'dark' ? 'white' : '' }}
-                                    >
-                                        Order
-                                    </Link>
-                                    <Link
-                                        to={'/dashboard'}
-                                        className='text-sm font-medium text-gray-700 '
-                                        style={{ color: mode === 'dark' ? 'white' : '' }}
-                                    >
-                                        Admin
-                                    </Link>
+                                    {user ? (
+                                        <Link
+                                            to={'/order'}
+                                            className='text-sm font-medium text-gray-700 '
+                                            style={{ color: mode === 'dark' ? 'white' : '' }}
+                                        >
+                                            Order
+                                        </Link>
+                                    ) : (
+                                        <Link
+                                            to={'/signup'}
+                                            className='text-sm font-medium text-gray-700 '
+                                            style={{ color: mode === 'dark' ? 'white' : '' }}
+                                        >
+                                            Signup
+                                        </Link>
+                                    )}
 
-                                    <a
-                                        className='text-sm font-medium text-gray-700 cursor-pointer  '
-                                        style={{ color: mode === 'dark' ? 'white' : '' }}
-                                    >
-                                        Logout
-                                    </a>
+                                    {user?.user?.email === 'knupadhyay784@gmail.com' ? (
+                                        <Link
+                                            to={'/dashboard'}
+                                            className='text-sm font-medium text-gray-700 '
+                                            style={{ color: mode === 'dark' ? 'white' : '' }}
+                                        >
+                                            Admin
+                                        </Link>
+                                    ) : (
+                                        ''
+                                    )}
+
+                                    {user ? (
+                                        <a
+                                            onClick={logout}
+                                            className='text-sm font-medium text-gray-700 cursor-pointer  '
+                                            style={{ color: mode === 'dark' ? 'white' : '' }}
+                                        >
+                                            Logout
+                                        </a>
+                                    ) : (
+                                        ''
+                                    )}
                                 </div>
 
                                 {/* <div className='hidden lg:ml-8 lg:flex'>
@@ -242,21 +293,21 @@ export default function Navbar() {
                                     <a href='#' className='flex items-center text-gray-700 '>
                                         <img
                                             className='inline-block w-10 h-10 rounded-full'
-                                            src='https://github.com/gaearon.png'
+                                            src='https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/854c3653036145.5925a26a38364.jpeg'
                                             alt='Dan_Abromov'
                                         />
                                     </a>
                                 </div>
 
-                                {/* Search */}
                                 <div className='flex lg:ml-6'>
                                     <button className='' onClick={toggleMode}>
-                                        {/* <MdDarkMode size={35} style={{ color: mode === 'dark' ? 'white' : '' }} /> */}
                                         {mode === 'light' ? (
                                             <FiSun className='' size={30} />
                                         ) : 'dark' ? (
                                             <BsFillCloudSunFill size={30} />
-                                        ) : ''}
+                                        ) : (
+                                            ''
+                                        )}
                                     </button>
                                 </div>
 
@@ -286,7 +337,7 @@ export default function Navbar() {
                                             className='ml-2 text-sm font-medium text-gray-700 group-'
                                             style={{ color: mode === 'dark' ? 'white' : '' }}
                                         >
-                                            0
+                                            {cartItems.length}
                                         </span>
                                         <span className='sr-only'>items in cart, view bag</span>
                                     </Link>
@@ -299,3 +350,5 @@ export default function Navbar() {
         </div>
     );
 }
+
+export default Navbar;

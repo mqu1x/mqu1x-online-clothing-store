@@ -9,6 +9,7 @@ const Order = () => {
         <Layout>
             {/* <h1>Name: </h1> */}
             {/* <h1>Roll No. {rollno}</h1> */}
+            <h1>Order Page</h1>
         </Layout>
     );
 };

@@ -114,9 +114,9 @@ const Footer = () => {
                             </li>
                         </nav>
                     </div>
-                    <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
+                    {/* <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
                         <img src='https://ecommerce-sk.vercel.app/pay.png' alt='' />
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div

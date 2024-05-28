@@ -49,7 +49,7 @@ function Cart() {
                                         className='mt-1 text-xs font-semibold text-gray-700'
                                         style={{ color: mode === 'dark' ? 'white' : '' }}
                                     >
-                                        ₹100
+                                        ₽100
                                     </p>
                                 </div>
                                 <div className='mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6'>
@@ -90,7 +90,7 @@ function Cart() {
                                 className='text-gray-700'
                                 style={{ color: mode === 'dark' ? 'white' : '' }}
                             >
-                                ₹100
+                                ₽100
                             </p>
                         </div>
                         <div className='flex justify-between'>
@@ -104,7 +104,7 @@ function Cart() {
                                 className='text-gray-700'
                                 style={{ color: mode === 'dark' ? 'white' : '' }}
                             >
-                                ₹20
+                                ₽20
                             </p>
                         </div>
                         <hr className='my-4' />
@@ -120,7 +120,7 @@ function Cart() {
                                     className='mb-1 text-lg font-bold'
                                     style={{ color: mode === 'dark' ? 'white' : '' }}
                                 >
-                                    ₹200
+                                    ₽200
                                 </p>
                             </div>
                         </div>

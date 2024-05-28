@@ -1,5 +1,6 @@
 import Context from '../../context/data/Context';
 import { useContext } from 'react';
+import { MdCurrencyRuble } from 'react-icons/md';
 
 const Track = () => {
     const context = useContext(Context);
@@ -83,7 +84,7 @@ const Track = () => {
                                     color: mode === 'dark' ? 'white' : '',
                                 }}
                             >
-                                <svg
+                                {/* <svg
                                     xmlns='http://www.w3.org/2000/svg'
                                     fill='none'
                                     viewBox='0 0 24 24'
@@ -96,7 +97,8 @@ const Track = () => {
                                         strokeLinejoin='round'
                                         d='M15 8.25H9m6 3H9m3 6l-3-3h1.5a3 3 0 100-6M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
                                     />
-                                </svg>
+                                </svg> */}
+                                <MdCurrencyRuble className='text-pink-600 w-12 h-12 mb-3 inline-block' />
 
                                 <h2
                                     className='title-font font-medium text-lg text-gray-900'
