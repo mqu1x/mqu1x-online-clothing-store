@@ -1,5 +1,5 @@
-import { Fragment, useContext, useState } from 'react';
-import Context from '../../context/data/Context';
+import React, { Fragment, useContext, useState } from 'react';
+import myContext from '../../context/data/myContext';
 import { BsFillCloudSunFill } from 'react-icons/bs';
 import { FiSun } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
@@ -8,7 +8,7 @@ import { RxCross2 } from 'react-icons/rx';
 import { useSelector } from 'react-redux';
 
 function Navbar() {
-    const context = useContext(Context);
+    const context = useContext(myContext);
     const { mode, toggleMode } = context;
 
     const [open, setOpen] = useState(false);
@@ -90,7 +90,7 @@ function Navbar() {
                                         ''
                                     )}
 
-                                    {user?.user?.email === 'knupadhyay784@gmail.com' ? (
+                                    {user?.user?.email === 'mich.krs.01@gmail.com' ? (
                                         <div className='flow-root'>
                                             <Link
                                                 to={'/dashboard'}
@@ -132,29 +132,12 @@ function Navbar() {
                                         >
                                             <img
                                                 className='inline-block w-10 h-10 rounded-full'
-                                                src='https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/854c3653036145.5925a26a38364.jpeg'
+                                                src='https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg'
                                                 alt='Dan_Abromov'
-                                            />
+                                            />{' '}
                                         </Link>
                                     </div>
                                 </div>
-
-                                {/* <div className='border-t border-gray-200 px-4 py-6'>
-                                    <a href='#' className='-m-2 flex items-center p-2'>
-                                        <img
-                                            src='img/indiaflag.png'
-                                            alt=''
-                                            className='block h-auto w-5 flex-shrink-0'
-                                        />
-                                        <span
-                                            className='ml-3 block text-base font-medium text-gray-900'
-                                            style={{ color: mode === 'dark' ? 'white' : '' }}
-                                        >
-                                            INDIA
-                                        </span>
-                                        <span className='sr-only'>, change currency</span>
-                                    </a>
-                                </div> */}
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>
@@ -196,13 +179,13 @@ function Navbar() {
                                     xmlns='http://www.w3.org/2000/svg'
                                     fill='none'
                                     viewBox='0 0 24 24'
-                                    strokeWidth='1.5'
+                                    stroke-width='1.5'
                                     stroke='currentColor'
-                                    className='w-6 h-6'
+                                    class='w-6 h-6'
                                 >
                                     <path
-                                        strokeLinecap='round'
-                                        strokeLinejoin='round'
+                                        stroke-linecap='round'
+                                        stroke-linejoin='round'
                                         d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
                                     />
                                 </svg>
@@ -249,7 +232,7 @@ function Navbar() {
                                         </Link>
                                     )}
 
-                                    {user?.user?.email === 'knupadhyay784@gmail.com' ? (
+                                    {user?.user?.email === 'mich.krs.01@gmail.com' ? (
                                         <Link
                                             to={'/dashboard'}
                                             className='text-sm font-medium text-gray-700 '
@@ -274,26 +257,11 @@ function Navbar() {
                                     )}
                                 </div>
 
-                                {/* <div className='hidden lg:ml-8 lg:flex'>
-                                    <a href='#' className='flex items-center text-gray-700 '>
-                                        <img
-                                            src='https://ecommerce-sk.vercel.app/img/indiaflag.png'
-                                            alt=''
-                                            className='block h-auto w-5 flex-shrink-0'
-                                        />
-                                        <span
-                                            className='ml-3 block text-sm font-medium'
-                                            style={{ color: mode === 'dark' ? 'white' : '' }}
-                                        >
-                                            INDIA
-                                        </span>
-                                    </a>
-                                </div> */}
                                 <div className='hidden lg:ml-8 lg:flex'>
                                     <a href='#' className='flex items-center text-gray-700 '>
                                         <img
                                             className='inline-block w-10 h-10 rounded-full'
-                                            src='https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/854c3653036145.5925a26a38364.jpeg'
+                                            src='https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg'
                                             alt='Dan_Abromov'
                                         />
                                     </a>
