@@ -22,7 +22,7 @@ function Footer() {
                                 className='title-font font-medium text-gray-900 tracking-widest text-sm mb-3'
                                 style={{ color: mode === 'dark' ? 'white' : '' }}
                             >
-                                CATEGORIES
+                                КАТЕГОРИИ
                             </h2>
                             <nav className='list-none mb-10'>
                                 <li>
@@ -30,7 +30,7 @@ function Footer() {
                                         className='text-gray-600 hover:text-gray-800'
                                         style={{ color: mode === 'dark' ? 'white' : '' }}
                                     >
-                                        Home
+                                        Главная
                                     </a>
                                 </li>
                                 <li>
@@ -38,7 +38,7 @@ function Footer() {
                                         className='text-gray-600 hover:text-gray-800'
                                         style={{ color: mode === 'dark' ? 'white' : '' }}
                                     >
-                                        Order
+                                        Заказы{/* Order */}
                                     </a>
                                 </li>
                                 <li>
@@ -46,15 +46,7 @@ function Footer() {
                                         className='text-gray-600 hover:text-gray-800'
                                         style={{ color: mode === 'dark' ? 'white' : '' }}
                                     >
-                                        Local For Vocal
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        className='text-gray-600 hover:text-gray-800'
-                                        style={{ color: mode === 'dark' ? 'white' : '' }}
-                                    >
-                                        Cart
+                                        Корзина
                                     </a>
                                 </li>
                                 <li>
@@ -72,7 +64,7 @@ function Footer() {
                                 className='title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase'
                                 style={{ color: mode === 'dark' ? 'white' : '' }}
                             >
-                                Customer Service
+                                ОБСЛУЖИВАНИЕ
                             </h2>
                             <nav className='list-none mb-10'>
                                 <li>
@@ -81,7 +73,7 @@ function Footer() {
                                         className='text-gray-600 hover:text-gray-800'
                                         style={{ color: mode === 'dark' ? 'white' : '' }}
                                     >
-                                        Return Policy
+                                        Политика возврата
                                     </Link>
                                 </li>
                                 <li>
@@ -90,7 +82,7 @@ function Footer() {
                                         className='text-gray-600 hover:text-gray-800'
                                         style={{ color: mode === 'dark' ? 'white' : '' }}
                                     >
-                                        About
+                                        О нас
                                     </Link>
                                 </li>
                                 <li>
@@ -99,7 +91,7 @@ function Footer() {
                                         className='text-gray-600 hover:text-gray-800'
                                         style={{ color: mode === 'dark' ? 'white' : '' }}
                                     >
-                                        Contact Us
+                                        Контакты
                                     </Link>
                                 </li>
                             </nav>
@@ -110,7 +102,7 @@ function Footer() {
                                 className='title-font font-medium text-gray-900 tracking-widest text-sm mb-3'
                                 style={{ color: mode === 'dark' ? 'white' : '' }}
                             >
-                                Services
+                                СЕРВИСЫ
                             </h2>
                             <nav className='list-none mb-10'>
                                 <li>
@@ -119,13 +111,10 @@ function Footer() {
                                         className='text-gray-600 hover:text-gray-800'
                                         style={{ color: mode === 'dark' ? 'white' : '' }}
                                     >
-                                        Privacy
+                                        Политика конфиденциальности
                                     </Link>
                                 </li>
                             </nav>
-                        </div>
-                        <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
-                            <img src='https://ecommerce-sk.vercel.app/pay.png' alt='' />
                         </div>
                     </div>
                 </div>

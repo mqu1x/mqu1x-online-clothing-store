@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from 'react';
+import { Fragment, useContext, useState } from 'react';
 import myContext from '../../context/data/myContext';
 import { BsFillCloudSunFill } from 'react-icons/bs';
 import { FiSun } from 'react-icons/fi';
@@ -73,7 +73,7 @@ function Navbar() {
                                         className='text-sm font-medium text-gray-900 '
                                         style={{ color: mode === 'dark' ? 'white' : '' }}
                                     >
-                                        All Products
+                                        Все товары
                                     </Link>
 
                                     {user ? (
@@ -83,7 +83,7 @@ function Navbar() {
                                                 style={{ color: mode === 'dark' ? 'white' : '' }}
                                                 className='-m-2 block p-2 font-medium text-gray-900'
                                             >
-                                                Order
+                                                Заказы
                                             </Link>
                                         </div>
                                     ) : (
@@ -97,7 +97,7 @@ function Navbar() {
                                                 className='-m-2 block p-2 font-medium text-gray-900'
                                                 style={{ color: mode === 'dark' ? 'white' : '' }}
                                             >
-                                                admin
+                                                Админ. панель
                                             </Link>
                                         </div>
                                     ) : (
@@ -111,7 +111,7 @@ function Navbar() {
                                                 className='-m-2 block p-2 font-medium text-gray-900 cursor-pointer'
                                                 style={{ color: mode === 'dark' ? 'white' : '' }}
                                             >
-                                                Logout
+                                                Выйти
                                             </a>
                                         </div>
                                     ) : (
@@ -121,7 +121,7 @@ function Navbar() {
                                                 className='-m-2 block p-2 font-medium text-gray-900 cursor-pointer'
                                                 style={{ color: mode === 'dark' ? 'white' : '' }}
                                             >
-                                                Signup
+                                                Регистрация
                                             </Link>
                                         </div>
                                     )}
@@ -134,7 +134,7 @@ function Navbar() {
                                                 className='inline-block w-10 h-10 rounded-full'
                                                 src='https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg'
                                                 alt='Dan_Abromov'
-                                            />{' '}
+                                            />
                                         </Link>
                                     </div>
                                 </div>
@@ -152,7 +152,7 @@ function Navbar() {
                         color: mode === 'dark' ? 'white' : '',
                     }}
                 >
-                    Get free delivery on orders over ₽300
+                    Получите бесплатную доставку при заказе на сумму более 300 ₽
                 </p>
 
                 <nav
@@ -212,7 +212,7 @@ function Navbar() {
                                         className='text-sm font-medium text-gray-700 '
                                         style={{ color: mode === 'dark' ? 'white' : '' }}
                                     >
-                                        All Products
+                                        Все товары
                                     </Link>
                                     {user ? (
                                         <Link
@@ -220,7 +220,7 @@ function Navbar() {
                                             className='text-sm font-medium text-gray-700 '
                                             style={{ color: mode === 'dark' ? 'white' : '' }}
                                         >
-                                            Order
+                                            Заказы
                                         </Link>
                                     ) : (
                                         <Link
@@ -228,7 +228,7 @@ function Navbar() {
                                             className='text-sm font-medium text-gray-700 '
                                             style={{ color: mode === 'dark' ? 'white' : '' }}
                                         >
-                                            Signup
+                                            Регистрация
                                         </Link>
                                     )}
 
@@ -238,7 +238,7 @@ function Navbar() {
                                             className='text-sm font-medium text-gray-700 '
                                             style={{ color: mode === 'dark' ? 'white' : '' }}
                                         >
-                                            Admin
+                                            Админ панель
                                         </Link>
                                     ) : (
                                         ''
@@ -250,7 +250,7 @@ function Navbar() {
                                             className='text-sm font-medium text-gray-700 cursor-pointer  '
                                             style={{ color: mode === 'dark' ? 'white' : '' }}
                                         >
-                                            Logout
+                                            Выйти
                                         </a>
                                     ) : (
                                         ''
