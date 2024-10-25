@@ -14,7 +14,7 @@ const slides = [
     '/img/banner-img.jpg',
     '/img/banner-img-2.jpg',
 
-    // Добавьте больше слайдов, если необходимо
+    
 ];
 
 const Slider = () => {
@@ -23,7 +23,7 @@ const Slider = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-        }, 3000); // Интервал в 3 секунды
+        }, 3000);
 
         return () => clearInterval(timer); // Очистка таймера при размонтировании компонента
     }, []);

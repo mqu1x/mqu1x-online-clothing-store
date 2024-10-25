@@ -10,7 +10,7 @@ function myState(props) {
     const toggleMode = () => {
         if (mode === 'light') {
             setMode('dark');
-            document.body.style.backgroundColor = "rgb(17, 24, 39)"
+            document.body.style.backgroundColor = "black"
         }
         else {
             setMode('light');
@@ -28,7 +28,7 @@ function myState(props) {
         description: null,
         time: Timestamp.now(),
         date: new Date().toLocaleString(
-            "en-US",
+            "ru-RU",
             {
                 month: "short",
                 day: "2-digit",
