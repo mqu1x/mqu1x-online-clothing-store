@@ -141,7 +141,7 @@ function Footer() {
 							className='text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4'
 							style={{ color: mode === 'dark' ? 'white' : '' }}
 						>
-							© 2023 mquix —
+							© {new Date().getFullYear()} mquix —
 							<a
 								href='https://twitter.com/knyttneve'
 								rel='noopener noreferrer'
