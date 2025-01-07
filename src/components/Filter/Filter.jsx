@@ -15,7 +15,8 @@ function Filter() {
 	} = context
 
 	return (
-		<div className=' container mx-auto px-4 mt-5 '>
+		//  mt-5 fix it
+		<div className=' container mx-auto px-4 '>
 			<div
 				className='p-5 rounded-lg bg-gray-100 drop-shadow-xl border'
 				style={{

@@ -28,6 +28,7 @@ function App() {
 			<Router>
 				<Routes>
 					<Route path='/' element={<Home />} />
+
 					<Route path='/allproducts' element={<Allproducts />} />
 					<Route
 						path='/order'
